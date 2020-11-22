@@ -17,7 +17,7 @@ router.route("/:id").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-//POST request to add a create a new challenge
+//POST request to add a new challenge
 
 router.route("/add").post((req, res) => {
   const title = req.body.title;
@@ -47,8 +47,6 @@ router.route("/:id/submit").put((req, res) => {
 
   Challenge.findOneAndUpdate({
     $push: {
-      submissionCount,
-
       submissions: [
         {
           title,
