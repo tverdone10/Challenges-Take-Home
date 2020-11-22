@@ -45,7 +45,7 @@ router.route("/:id/submit").put((req, res) => {
   const description = req.body.description;
   const userName = req.body.userName;
 
-  Challenge.findOneAndUpdate({
+  Challenge.findByIdAndUpdate(req.params.id, {
     $push: {
       submissions: [
         {
