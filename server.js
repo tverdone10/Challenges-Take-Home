@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
+
+var bodyParser = require('body-parser')
+app.use(bodyParser.json())
 
 //Connect to MongoDB Atlas
 
